@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+  padding-top: 80px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/b/bb/Graduated_Blue_Background.png");
+}

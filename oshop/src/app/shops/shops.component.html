@@ -1,0 +1,16 @@
+<div class="sticky-top">
+  <div class="list-group">
+    <a
+    class="list-group-item list-group-item-action"
+    [class.active]="!shop"
+    routerLink="/shops/products/">
+    All Shops</a>
+    <a *ngFor="let s of shops$ | async"
+    [routerLink]="['/shops/products',s.$key]"
+    class="list-group-item list-group-item-action"
+    [class.active]="shop === s.name"
+     >
+      {{ s.name }}
+    </a>
+ </div>
+</div>

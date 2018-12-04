@@ -1,0 +1,35 @@
+<h1>Orders</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Date</th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total Price</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="status$ | async as status">
+      <td>{{ status.shipping.name }}</td>
+      <td>{{ status.dateCreated | date }}</td>
+      <td><li *ngFor="let item of items">
+        {{ item.product.title }}
+        {{ item.quantity }}
+        {{ item.product.price | currency}}
+        {{ item.totalPrice | currency}}
+      </li></td>
+      <td>
+        <!--<a [routerLink]="['/admin/admin-orders', status.$key]">{{ status.status }}</a
+        <button type="button" class="btn btn-info">Shipped</button>-->
+        <button (click)="changeStatus()" type="button" class="btn btn-info">{{ clicked ? "Shipped" : status.status }}</button>
+     </td>
+      <!--<td>
+        <a href="#">View</a>
+      </td>-->
+    </tr>
+  </tbody>
+</table>
